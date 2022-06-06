@@ -25,19 +25,8 @@ I created maven project in **Jenkins**. Resources directory has jenkins folder w
 
 Running tests in multiple threads
 -----------------------------------
-If we use Serenity + Jbehave, parallel tests don't work.  
-I read about it on the official serenity forum, it's all about a bug on the Jbehave side.
+For parallel test execution I used "parallel" parameter in maven-failsafe-plugin 
 
-Running tests in multiple threads in Cucumber
----------------------------------------------
-I decicded use Jbehave, because I have already used Cucumber in my practice program.
-There we can use parallel tests, it's simple. We just need to added configuration to
-failsafe\surefire plugin:
-
-                <configuration>
-                    <forkCount>6</forkCount>
-                    <reuseForks>true</reuseForks>
-                </configuration>
 
 Disablement of saving screenshots
 ------------------------------------
