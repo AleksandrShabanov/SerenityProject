@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import starter.framework.LocatorsEnum;
-
 import java.io.File;
 
 public class NewAppPage extends PageObject {

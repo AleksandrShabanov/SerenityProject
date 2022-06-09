@@ -1,7 +1,6 @@
 package starter.pages;
 
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
-
 import lombok.Getter;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -11,10 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import starter.framework.LocatorsEnum;
 import starter.pojo.Root;
-
 import java.io.IOException;
 import java.util.Objects;
-
 @Getter
 public class DetailsPage extends PageObject {
 
@@ -104,7 +101,6 @@ public class DetailsPage extends PageObject {
 
     public void isEqual(DetailsPage detailsPageInfo, DetailsPage detailsPageJson) {
         SoftAssertions softAssertions = new SoftAssertions();
-
         softAssertions.assertThat(detailsPageInfo.getTitleOfApp()).isEqualTo(detailsPageJson.getTitleOfApp());
         softAssertions.assertThat(detailsPageInfo.getDescriptionOfApp()).isEqualTo(detailsPageJson.getDescriptionOfApp());
         softAssertions.assertThat(detailsPageInfo.getAuthorOfApp()).isEqualTo(detailsPageJson.getAuthorOfApp());

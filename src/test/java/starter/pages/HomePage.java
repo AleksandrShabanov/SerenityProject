@@ -6,7 +6,6 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import starter.framework.LocatorsEnum;
-
 @Getter
 public class HomePage extends PageObject {
 

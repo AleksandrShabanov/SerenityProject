@@ -14,9 +14,8 @@ With the command: **mvn clean verify -Dwebdriver.driver=nameOfBrowser(for exampl
 
 Basic authentication
 ----------------------------
-I need help here. I added environments to serenity.conf file and I can switch url with command:
-**mvn clean verify -Denvironment=base**,
-but I don't know how run single test.
+I added environments to serenity.conf file, and I can switch url with command:
+**mvn clean verify -Denvironment=base -Dcucumber.options="--tags @baseurl"**,
 
 Continuous Integration
 ------------------------------

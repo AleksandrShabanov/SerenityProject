@@ -39,7 +39,6 @@ public class Root {
         return numberOfDownloads == root.numberOfDownloads && Objects.equals(category.getTitle(), root.category.getTitle())
                 && Objects.equals(description, root.description) && Objects.equals(title, root.title) && Objects.equals(author.getName(), root.author.getName());
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(category.getTitle(), description, title, numberOfDownloads, author.getName());

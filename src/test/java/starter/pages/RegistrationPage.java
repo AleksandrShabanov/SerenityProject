@@ -14,7 +14,6 @@ public class RegistrationPage extends PageObject {
     @FindBy(xpath = "//select[@name='role']")
     private WebElementFacade userRoleSelector;
 
-
     public void enterTextData(String fieldName, String text) {
         textFiled = element(By.xpath(String.format(LocatorsEnum.BASE_TEXT_FIELD_NAME.getText(), fieldName)));
         textFiled.sendKeys(text);

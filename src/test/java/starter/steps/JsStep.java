@@ -5,7 +5,6 @@ import net.thucydides.core.annotations.Steps;
 import starter.serenity_cucumber_steps.JsUserStep;
 
 public class JsStep {
-
     @Steps
     JsUserStep jsUserStep;
 

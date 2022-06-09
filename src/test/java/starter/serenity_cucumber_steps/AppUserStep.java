@@ -25,11 +25,6 @@ public class AppUserStep extends PageObject {
     }
 
     @Step
-    public void goToTheMyApplications(String link) {
-        headerPage.getMyAppPage(link);
-    }
-
-    @Step
     public void clickOnAddNewApplication(String link) {
         myAppPage.getNewAppPage(link);
     }

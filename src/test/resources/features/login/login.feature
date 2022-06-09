@@ -1,6 +1,7 @@
 
 Feature: feature to test login functionality
 
+@baseurl
   Scenario: Login as a valid user
     Given type to input with name 'j_username' text: 'admin'
     And type to input with name 'j_password' text: 'admin'

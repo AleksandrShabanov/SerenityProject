@@ -8,17 +8,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class JsPage extends PageObject {
-
     @FindBy(id = "top")
     private WebElementFacade top;
     @FindBy(id = "left")
     private WebElementFacade left;
 
-
     public void enterCoordinates() {
         String sTop = (String)evaluateJavascript("return $(\"div.flash\").css(\"top\" );");
         String sLeft = (String)evaluateJavascript("return $(\"div.flash\").css(\"left\" );");
-
         top.sendKeys(Long.toString(Math.round(Double.parseDouble(sTop.replace("px", "")))));
         left.sendKeys(Long.toString(Math.round(Double.parseDouble(sLeft.replace("px", "")))));
     }

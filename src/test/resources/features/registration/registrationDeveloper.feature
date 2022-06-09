@@ -1,4 +1,4 @@
-@smoketest
+
 Feature:feature to test registration developer functionality
 
   Scenario: Register as a developer, verify that the developer can open the page to upload an application.
