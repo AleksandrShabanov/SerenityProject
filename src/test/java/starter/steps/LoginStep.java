@@ -1,21 +1,35 @@
 package starter.steps;
 
 import cucumber.api.java.en.*;
+import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.util.EnvironmentVariables;
 import starter.serenity_cucumber_steps.LoginUserStep;
 
 public class LoginStep {
     @Steps
     private LoginUserStep loginUserStep;
+    private EnvironmentVariables env;
+    private String url = "http://admin:admin@selenium-courses.ipa.dataart.net:8081/";
 
     @Given("type to input with name {string} text: {string}")
     public void enterData(String id, String data) {
-        loginUserStep.enterUserData(id, data);
+        String baseUrl = EnvironmentSpecificConfiguration.from(env)
+                        .getProperty("webdriver.base.url");
+
+        if (!baseUrl.equals(url)) {
+            loginUserStep.enterUserData(id, data);
+        }
     }
 
     @When("user clicks on {string} button")
     public void clicksOnLoginButton(String button) {
-        loginUserStep.clickOnLoginButton(button);
+        String baseUrl = EnvironmentSpecificConfiguration.from(env)
+                .getProperty("webdriver.base.url");
+
+        if (!baseUrl.equals(url)) {
+            loginUserStep.clickOnLoginButton(button);
+        }
     }
 
     @Then("^check valid login using fName '(.*)' and lName '(.*)'$")

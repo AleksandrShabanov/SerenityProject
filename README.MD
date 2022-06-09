@@ -10,7 +10,7 @@ To Run
 Cross browser
 --------------
 I created the **serenity.conf** file, and there I registered the settings for different browsers.
-With the command: **mvn clean verify -Dwebdriver.driver=nameOfBrowser(for example firefox)**  We can run tests in different browsers
+With the command: **mvn clean verify -Dwebdriver.driver=nameOfBrowser(for example, firefox)**  We can run tests in different browsers
 
 Basic authentication
 ----------------------------

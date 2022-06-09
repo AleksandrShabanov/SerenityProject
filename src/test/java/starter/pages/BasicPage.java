@@ -1,6 +1,9 @@
 package starter.pages;
+import freemarker.core.Environment;
+import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import net.thucydides.core.util.EnvironmentVariables;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
