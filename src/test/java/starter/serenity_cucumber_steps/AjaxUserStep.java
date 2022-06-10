@@ -34,6 +34,7 @@ public class AjaxUserStep {
 
     @Step
     public void checkIncorrectResult(String incorrectString) {
+
         Assert.assertEquals(ajaxPage.getIncorrectResultField(), incorrectString);
     }
 }
