@@ -14,8 +14,6 @@ Feature: feature to test login functionality
     When user clicks on 'Login' button
     Then check invalid login using string 'You have entered an invalid username or password!'
 
-#    @baseurl
-#    Scenario: Login as a valid user with base url
-#      Then check valid login using fName 'Ivan' and lName 'Petrov'
+
 
 

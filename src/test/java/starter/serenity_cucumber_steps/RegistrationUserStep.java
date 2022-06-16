@@ -3,7 +3,6 @@ package starter.serenity_cucumber_steps;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import starter.pages.*;
-import java.util.Map;
 
 public class RegistrationUserStep {
 
@@ -20,10 +19,8 @@ public class RegistrationUserStep {
     }
 
     @Step
-    public void userEntersData(Map<String, String> map) {
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            registrationPage.enterTextData(entry.getKey(), entry.getValue());
-        }
+    public void userEntersData(String field, String data) {
+        registrationPage.enterTextData(field, data);
     }
 
     @Step

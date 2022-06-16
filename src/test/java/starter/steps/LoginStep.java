@@ -10,12 +10,13 @@ public class LoginStep {
     @Steps
     private LoginUserStep loginUserStep;
     private EnvironmentVariables env;
-    private String baseUrl = EnvironmentSpecificConfiguration.from(env)
-            .getProperty("webdriver.base.url");
     private String url = "http://admin:admin@selenium-courses.ipa.dataart.net:8081/";
 
     @Given("type to input with name {string} text: {string}")
     public void enterData(String id, String data) {
+        String baseUrl = EnvironmentSpecificConfiguration.from(env)
+                        .getProperty("webdriver.base.url");
+
         if (!baseUrl.equals(url)) {
             loginUserStep.enterUserData(id, data);
         }
@@ -23,6 +24,9 @@ public class LoginStep {
 
     @When("user clicks on {string} button")
     public void clicksOnLoginButton(String button) {
+        String baseUrl = EnvironmentSpecificConfiguration.from(env)
+                .getProperty("webdriver.base.url");
+
         if (!baseUrl.equals(url)) {
             loginUserStep.clickOnLoginButton(button);
         }

@@ -3,7 +3,6 @@ package starter.steps;
 import cucumber.api.java.en.*;
 import net.thucydides.core.annotations.Steps;
 import starter.serenity_cucumber_steps.RegistrationUserStep;
-import java.util.Map;
 
 public class RegistrationStep {
 
@@ -15,9 +14,9 @@ public class RegistrationStep {
         registrationUserStep.goToRegistrationPage(registerLink);
     }
 
-    @And("^user enters his data to ([^\"]*) and type([^\"]*)$")
-    public void theUserEntersHisDataToTextFieldAndTypeText(String textFiled, String text, Map<String, String> map) {
-        registrationUserStep.userEntersData(map);
+    @And("^new user enters (.*) to (.*)")
+    public void multipleRegistration(String data, String field) {
+        registrationUserStep.userEntersData(field, data);
     }
 
     @When("set {string} role")
@@ -31,7 +30,7 @@ public class RegistrationStep {
         System.out.println("user clicks on register button");
     }
 
-    @Then("verify that the user with name {string} and last name {string} is logged in")
+    @Then("^verify that the user with name (.*) and last name (.*) is logged in$")
     public void verifyThatTheUserIsLoggedIn(String fName, String lName) {
         registrationUserStep.verifyThatUserLogin(fName, lName);
     }
@@ -50,4 +49,5 @@ public class RegistrationStep {
     public void verifyThatTheUserCanSeeTheAppButCannotUploadThem() {
         registrationUserStep.verifyThatTheUserCanSeeTheAppButCannotUploadThem();
     }
+
 }

@@ -42,5 +42,23 @@ Feature:feature to test registration user functionality
     And user clicks on 'Register'
     Then verify that the user with name 'John' and last name 'Johnson' is logged in
 
+    Scenario Outline: Registration of multiple users
+      Given user is on login page clicks on 'Register as a new user' link
+      And new user enters <name> to name
+      And new user enters <first name> to fname
+      And new user enters <last name> to lname
+      And new user enters <password> to password
+      And new user enters <password confirm> to passwordConfirm
+      When set 'USER' role
+      And user clicks on 'Register'
+      Then verify that the user with name <first name> and last name <last name> is logged in
+
+      Examples: data for registration
+      |name|first name|last name|password|password confirm|
+      |Jedi|Luke      |Skywalker|qwerty |qwerty          |
+      |Sith|Darth     |Vader    |DeathStar|DeathStar    |
+      |Princess|Leia  |Skywalker|pony     |pony         |
+
+
 
 
