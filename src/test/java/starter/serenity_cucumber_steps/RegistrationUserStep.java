@@ -4,6 +4,8 @@ import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import starter.pages.*;
 
+import java.util.Map;
+
 public class RegistrationUserStep {
 
     private LoginPage loginPage;
@@ -19,8 +21,15 @@ public class RegistrationUserStep {
     }
 
     @Step
-    public void userEntersData(String field, String data) {
+    public void enterMultipleData(String field, String data) {
         registrationPage.enterTextData(field, data);
+    }
+
+    @Step
+    public void userEntersData(Map<String, String> data) {
+        for (Map.Entry<String, String> entry : data.entrySet()) {
+            registrationPage.enterTextData(entry.getKey(), entry.getValue());
+        }
     }
 
     @Step

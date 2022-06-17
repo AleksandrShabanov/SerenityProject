@@ -11,8 +11,13 @@ public class  LoginUserStep {
     private HeaderPage headerPage;
 
     @Step
-    public void enterUserData(String id, String login) {
-        loginPage.enterData(id, login);
+    public void enterAdminData(String userNameId, String passwordId, String data) {
+        loginPage.enterData(userNameId, data);
+        loginPage.enterData(passwordId, data);
+    }
+    @Step
+    public void enterUserData(String id, String data) {
+        loginPage.enterData(id, data);
     }
 
     @Step

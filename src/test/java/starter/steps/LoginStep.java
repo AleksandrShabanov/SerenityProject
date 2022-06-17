@@ -22,6 +22,11 @@ public class LoginStep {
         }
     }
 
+    @Given("enters admin data")
+    public void entersAdminData() {
+        loginUserStep.enterAdminData("j_username", "j_password", "admin");
+    }
+
     @When("user clicks on {string} button")
     public void clicksOnLoginButton(String button) {
         String baseUrl = EnvironmentSpecificConfiguration.from(env)

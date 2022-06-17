@@ -4,6 +4,8 @@ import cucumber.api.java.en.*;
 import net.thucydides.core.annotations.Steps;
 import starter.serenity_cucumber_steps.RegistrationUserStep;
 
+import java.util.Map;
+
 public class RegistrationStep {
 
     @Steps
@@ -16,7 +18,12 @@ public class RegistrationStep {
 
     @And("^new user enters (.*) to (.*)")
     public void multipleRegistration(String data, String field) {
-        registrationUserStep.userEntersData(field, data);
+        registrationUserStep.enterMultipleData(field, data);
+    }
+
+    @And("user enters his data to field and type text")
+    public void userEntersData(Map<String, String> data) {
+        registrationUserStep.userEntersData(data);
     }
 
     @When("set {string} role")
